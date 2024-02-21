@@ -249,13 +249,14 @@ export const Answer = ({
                                     tabIndex={0} 
                                     role="link" 
                                     key={idx} 
-                                    onClick={() => onCitationClicked(citation)} 
-                                    onKeyDown={e => e.key === "Enter" || e.key === " " ? onCitationClicked(citation) : null}
+                                    // onClick={() => onCitationClicked(citation)} 
+                                    // onKeyDown={e => e.key === "Enter" || e.key === " " ? onCitationClicked(citation) : null}
                                     className={styles.citationContainer}
                                     aria-label={createCitationFilepath(citation, idx)}
                                 >
                                     <div className={styles.citation}>{idx}</div>
-                                    {createCitationFilepath(citation, idx, true)}
+                                    <a href={citation.url!} target="_blank">{citation.title}</a>
+                                    {/* {createCitationFilepath(citation, idx, true)} */}
                                 </span>);
                         })}
                     </div>
